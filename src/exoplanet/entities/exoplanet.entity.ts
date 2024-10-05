@@ -3,6 +3,9 @@ import { Schema } from "mongoose";
 export class Exoplanet {
 
     _id: string;
+
+    solarSystem: string;
+
     name: string;
 
     radius: number;
@@ -11,14 +14,31 @@ export class Exoplanet {
     type: Exoplanet.Type
 
     // time in terrest days
-    orbital_period: number 
+    orbitalPeriod: number 
+
+    luminosityOfStar: number
+    distanceToStar: number
 }
 
+export const Earth = {
+    _id:'earth',
+    solarSystem:'solar',
+    name:'earth',
+    
+    radius: 6371, // km
+    mass:5972, // 1e21
+
+    distanceToStar: 149.597870, // 1e6 km
+    luminosityOfStar: 1,
+
+    orbitalPeriod:365,
+    type: 'ROCKY'
+} as Exoplanet
 
 export namespace Exoplanet {
     export enum Type {
-        ROCKY,
-        GASEOUS
+        ROCKY="ROCKY",
+        GASEOUS="GASEOUS"
     }
 }
 
@@ -29,5 +49,7 @@ export const ExoplanetSchema = new Schema({
   radius: { type: Number, required: true },
   mass: { type: Number, required: true },
   type: { type: String, enum: Object.values(Exoplanet.Type), required: true },
-  orbital_period: { type: Number, required: true },
+  orbitalPeriod: { type: Number, required: true },
+  luminosityOfStar: { type: Number, required: true },
+  distanceToStar: { type: Number, required: true },
 });
