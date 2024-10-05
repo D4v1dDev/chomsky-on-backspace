@@ -24,7 +24,7 @@ export class ExoplanetController {
     return this.exoplanetService.findOne(id);
   }
 
-  @Get(':id/sim')
+  @Get(':id/habitability')
   getEarthSimilarity(@Param('id') id: string) {
     return this.exoplanetService.calculateById(id);
   }

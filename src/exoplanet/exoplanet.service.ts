@@ -43,16 +43,11 @@ export class ExoplanetService {
     let res = 1;
 
     res *= this.calc(planet.radius, Earth.radius, 1.25);
-    console.log(res)
-    res *= this.calc(planet.mass, Earth.mass, 1.25);
-    console.log(res)
-    
+    res *= this.calc(planet.mass, Earth.mass, 1.25);    
     res *= this.calc(planet.orbitalPeriod, Earth.orbitalPeriod, 0.5);
-    console.log(res)
 
     const habitableZone = this.habitableZone(planet);
     res *= this.calc(1 - Math.abs(habitableZone - 1), 1, 1);
-    console.log(res)
 
     if (planet.type == Exoplanet.Type.GASEOUS) res -= 0.65;
 
