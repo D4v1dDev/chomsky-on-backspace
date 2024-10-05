@@ -18,6 +18,10 @@ export class Exoplanet {
 
     luminosityOfStar: number
     distanceToStar: number
+
+    minAltitude: number
+    maxAltitude: number
+    aqua: number // [0, 1]
 }
 
 export const Earth = {
@@ -52,4 +56,10 @@ export const ExoplanetSchema = new Schema({
   orbitalPeriod: { type: Number, required: true },
   luminosityOfStar: { type: Number, required: true },
   distanceToStar: { type: Number, required: true },
+
+
+  minAltitude: { type: Number, required: true },
+  maxAltitude: { type: Number, required: true },
+
+  aqua: { type: Number, required: true },
 });
