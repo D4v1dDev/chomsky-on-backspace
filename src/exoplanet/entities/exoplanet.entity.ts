@@ -36,7 +36,11 @@ export const Earth = {
     luminosityOfStar: 1,
 
     orbitalPeriod:365,
-    type: 'ROCKY'
+    type: 'ROCKY',
+
+    minAltitude: 6371,
+    maxAltitude: 6380,
+    aqua: 0.2
 } as Exoplanet
 
 export namespace Exoplanet {
