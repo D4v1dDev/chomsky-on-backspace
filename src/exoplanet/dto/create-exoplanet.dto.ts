@@ -1,8 +1,8 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Exoplanet } from "../entities/exoplanet.entity";
 
-export class CreateExoplanetDto {
 
+export class CreateExoplanetDto {
 
     @ApiProperty()
     name: string;
@@ -16,12 +16,12 @@ export class CreateExoplanetDto {
         description: 'km'
     })
     radius: number;
+    
     @ApiProperty({
         description: '1e21 kg'
     })
     mass: number;
 
-    
     @ApiProperty({
         enum: Exoplanet.Type
     })
@@ -36,11 +36,11 @@ export class CreateExoplanetDto {
         description: '1 is equals to the luminosity of the sun.'
     })
     luminosityOfStar: number
+    
     @ApiProperty({
         description: 'Millions of km'
     })
     distanceToStar: number
-
 
     @ApiProperty({
         description: 'Value of 0 to 1 in function of how many water it has',
@@ -49,4 +49,13 @@ export class CreateExoplanetDto {
     })
     aqua: number
 
+    @ApiProperty({
+        description: 'Hex color representing the surface color'
+    })
+    surfaceColor: string;
+
+    @ApiProperty({
+        description: 'Hex color representing the atmosphere color'
+    })
+    atmosphereColor: string;
 }

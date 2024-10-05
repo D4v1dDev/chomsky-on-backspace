@@ -22,6 +22,9 @@ export class Exoplanet {
     minAltitude: number
     maxAltitude: number
     aqua: number // [0, 1]
+
+    surfaceColor: string;
+    atmosphereColor: string;
 }
 
 export const Earth = {
@@ -40,7 +43,11 @@ export const Earth = {
 
     minAltitude: 6371,
     maxAltitude: 6380,
-    aqua: 0.2
+    aqua: 0.2,
+
+
+    surfaceColor: '#006400',
+    atmosphereColor: '#87CEEB44' 
 } as Exoplanet
 
 export namespace Exoplanet {
